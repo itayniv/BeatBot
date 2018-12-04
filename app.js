@@ -15,8 +15,6 @@ var currtimemin = 0;
 var currtimesecrev = 0;
 var currtimesminrev = 0;
 
-
-
 var app = express();
 var server  = http.createServer(app);
 
@@ -30,10 +28,13 @@ var seqarraystate = [];
 
 //TODO create an array from var width and height
 
-var port = process.env.PORT || 3000;
 
 let AWS_config_accessKeyId = process.env.AWS_config_accessKeyId;
 let AWS_config_secretAccessKey = process.env.AWS_config_accessKeyId;
+
+
+var port = process.env.PORT || 3000;
+
 
 
 
