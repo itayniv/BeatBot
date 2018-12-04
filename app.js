@@ -74,13 +74,13 @@ app.get('/GetGridSize', function(req,res){
     "secretAccessKey": AWS_config_secretAccessKey,
     "region": 'us-west-2'
   }
-  
+
   console.log("here",AWS_config_accessKeyId, AWS_config_secretAccessKey);
   res.send(obj)
 
 });
 
-server = app.listen(8080, function () {
+server = app.listen(port, function () {
   console.log('Example app listening on port 8080!')
 });
 
