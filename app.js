@@ -33,7 +33,7 @@ let AWS_config_accessKeyId = process.env.AWS_config_accessKeyId;
 let AWS_config_secretAccessKey = process.env.AWS_config_accessKeyId;
 
 
-let port = process.env.PORT || 3000;
+let port = process.env.PORT || 8080;
 
 
 
@@ -80,8 +80,8 @@ app.get('/GetGridSize', function(req,res){
 
 });
 
-var server = app.listen(3000, function () {
-  console.log('Example app listening on port 3000!')
+var server = app.listen(8080, function () {
+  console.log('Example app listening on port 8080!')
 });
 
 
@@ -92,7 +92,6 @@ sockets.on('connection', function(socket){
 
   sockets.emit('usercount', sockets.engine.clientsCount);
   //console.log('User num: ', sockets.engine.clientsCount);
-
 
   playerAmount = playerAmount + 1;
   //console.log('playerAmount', playerAmount);
@@ -134,8 +133,6 @@ metronome.on('tick', function(){
   if (globalbarType >= 55){
     appTempo = 0;
   }
-
-
 
   sockets.emit('currplayer', currplayer);
 });
