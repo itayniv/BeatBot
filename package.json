@@ -4,6 +4,9 @@
   "script": {
     "start": "node app.js"
   },
+  "engines": {
+    "node": "10.x"
+  },
   "dependencies": {
     "aws-sdk": "^2.342.0",
     "body-parser": "^1.18.2",
