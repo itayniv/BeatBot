@@ -33,7 +33,7 @@ let AWS_config_accessKeyId = process.env.AWS_config_accessKeyId;
 let AWS_config_secretAccessKey = process.env.AWS_config_accessKeyId;
 
 
-var port = process.env.PORT || 3000;
+let port = process.env.PORT || 3000;
 
 
 
