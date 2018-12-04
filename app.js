@@ -4,7 +4,6 @@ var path = require("path");
 var io = require('socket.io');
 var bodyParser = require('body-parser')
 var express = require('express');
-var Metronome = require('timepiece').Metronome;
 var currplayer = 0;
 var appTempo = 400;
 var userID = 0;
@@ -74,13 +73,14 @@ app.get('/GetGridSize', function(req,res){
     "accessKey": AWS_config_accessKeyId,
     "secretAccessKey": AWS_config_secretAccessKey,
     "region": 'us-west-2'
-
   }
+  
+  console.log("here",AWS_config_accessKeyId, AWS_config_secretAccessKey);
   res.send(obj)
 
 });
 
-var server = app.listen(8080, function () {
+server = app.listen(8080, function () {
   console.log('Example app listening on port 8080!')
 });
 
@@ -94,13 +94,11 @@ sockets.on('connection', function(socket){
   //console.log('User num: ', sockets.engine.clientsCount);
 
   playerAmount = playerAmount + 1;
-  //console.log('playerAmount', playerAmount);
   userID = userID+1;
   if (userID >= 11){
     userID = 1;
   }
 
-  //console.log(userID);
   socket.send(socket.id);
 
 
@@ -113,27 +111,3 @@ sockets.on('connection', function(socket){
     //console.log('User num: ', sockets.engine.clientsCount);
   });
 });
-
-
-
-////////////////tempo///////////
-// By default, a metronome object is set to 60 bpm.
-var metronome = new Metronome();
-// But you could also initialize one at another tempo.
-// It emits a 'tick' event on each beat
-metronome.set(appTempo);
-
-metronome.on('tick', function(){
-  currplayer ++;
-  if (currplayer == 16){
-    currplayer = 0;
-    globalbarType ++;
-    sockets.emit('globalTimetype', globalbarType);
-  }
-  if (globalbarType >= 55){
-    appTempo = 0;
-  }
-
-  sockets.emit('currplayer', currplayer);
-});
-metronome.start();
