@@ -42,9 +42,22 @@
   /* z-index: 1; */
   font-size: 17px;
   text-align: center;
-  width: 70px;
+  width: 80%;;
   color: black;
 }
+
+
+.align-center{
+  text-align: center;
+  /* font-family: Roboto-Mono; */
+  color: #999999;
+  font-family: Helvetica;
+  padding-top: 250px;
+  margin-bottom: 24px;
+  font-size: 14px;
+}
+
+
 
 .sub-text-players{
   text-align: left;
