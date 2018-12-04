@@ -29,7 +29,7 @@ var seqarraystate = [];
 
 
 let AWS_config_accessKeyId = process.env.AWS_config_accessKeyId;
-let AWS_config_secretAccessKey = process.env.AWS_config_accessKeyId;
+let AWS_config_secretAccessKey = process.env.AWS_config_secretAccessKey;
 
 
 let port = process.env.PORT || 8080;
@@ -74,8 +74,6 @@ app.get('/GetGridSize', function(req,res){
     "secretAccessKey": AWS_config_secretAccessKey,
     "region": 'us-west-2'
   }
-
-  console.log("here",AWS_config_accessKeyId, AWS_config_secretAccessKey);
   res.send(obj)
 
 });
