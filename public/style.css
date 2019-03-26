@@ -12,6 +12,14 @@
   width: 100% !important;
 }
 
+.pushToStart{
+    position: fixed;
+    top: -20px;
+    right: 95%;
+    left: 0;
+    height: 50px;
+}
+
 .icon-font{
   padding-top: 0px;
   text-align: left;
