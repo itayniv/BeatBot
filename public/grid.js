@@ -129,7 +129,7 @@ function playPause() {
     audio = new AudioContext();
     //repeated event every 8th note
     Tone.Transport.bpm.value = 90;
-    Tone.Transport.swing.value = .4,
+    Tone.Transport.swing.value = .4;
       Tone.Transport.start();
 
 
